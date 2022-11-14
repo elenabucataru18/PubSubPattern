@@ -11,7 +11,6 @@ internal class Employee : ISubscriber
 
     public void Subscribe(IBroker department, DepartmentType departmentEnum)
     {
-        // register OnNotificationReceived with publisher event
         department.ProcessSubscribe(departmentEnum, ProcessDocument);
     }
 
