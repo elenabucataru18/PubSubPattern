@@ -21,7 +21,7 @@ public sealed class DepartmentBroker : IBroker
         Documents.Push(document);
     }
 
-    public void Publish(Document document, IBroker.Notify onDepartment)
+    private void Publish(Document document, IBroker.Notify onDepartment)
     {
         if (onDepartment != null)
         {
@@ -82,5 +82,4 @@ public sealed class DepartmentBroker : IBroker
             }
         }
     }
-
 }
