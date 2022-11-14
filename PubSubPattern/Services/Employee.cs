@@ -16,7 +16,7 @@ internal class Employee : ISubscriber
 
     public virtual void ProcessDocument(IBroker broker, NotificationEvent notificationEvent)
     {
-        Console.WriteLine($"Hello, {0}! A new document with id: {1} has been added in your {2} department.",
+        Console.WriteLine("Hello, {0}! A new document with id: {1} has been added in your {2} department.",
             Name, notificationEvent.Document.RegistrationNumber, notificationEvent.Document.DepartmentType);
 
         _queueDocuments.Enqueue(notificationEvent.Document);
@@ -41,7 +41,7 @@ internal class Employee : ISubscriber
                 var document = _queueDocuments.Dequeue();
                 _resolvedDocuments.Add(document);
 
-                Console.WriteLine($"Employee {0} reviewed document with {1} number. Number of reviewed documents {2}.",
+                Console.WriteLine("Employee {0} reviewed document with {1} number. Number of reviewed documents {2}.",
                     Name, document.RegistrationNumber, _resolvedDocuments.Count);
             }
         }
