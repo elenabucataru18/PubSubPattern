@@ -14,7 +14,6 @@ internal class Employee : ISubscriber
         department.ProcessSubscribe(departmentEnum, ProcessDocument);
     }
 
-    // It get executed when the event published by the Publisher
     public virtual void ProcessDocument(IBroker broker, NotificationEvent notificationEvent)
     {
         Console.WriteLine($"Hello, {0}! A new document with id: {1} has been added in your {2} department.",
